@@ -14,6 +14,11 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/yoshoku/randsvd'
   spec.license       = 'MIT'
 
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = spec.homepage
+  spec.metadata['changelog_uri'] = 'https://github.com/yoshoku/randsvd/blob/main/CHANGELOG.md'
+  spec.metadata['rubygems_mfa_required'] = 'true'
+
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features|sig-deps)/})
   end
@@ -21,8 +26,6 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'nmatrix'
-  spec.add_runtime_dependency 'nmatrix-lapacke'
-  spec.add_runtime_dependency 'numo-narray', '>= 0.9.1'
-  spec.add_runtime_dependency 'numo-linalg', '>= 0.1.4'
+  spec.add_dependency 'nmatrix'
+  spec.add_dependency 'nmatrix-lapacke'
 end
